@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5C89A1B2621D4EF003A731A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C89A1A2621D4EF003A731A /* Card.swift */; };
+		A5C89A1E2621D728003A731A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C89A1D2621D728003A731A /* CardView.swift */; };
 		A5FEFC13261F4F1600D7287B /* FlashzillaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FEFC12261F4F1600D7287B /* FlashzillaApp.swift */; };
 		A5FEFC15261F4F1600D7287B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FEFC14261F4F1600D7287B /* ContentView.swift */; };
 		A5FEFC17261F4F1800D7287B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5FEFC16261F4F1800D7287B /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A5C89A1A2621D4EF003A731A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		A5C89A1D2621D728003A731A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = SOURCE_ROOT; };
 		A5FEFC0F261F4F1600D7287B /* Flashzilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashzilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5FEFC12261F4F1600D7287B /* FlashzillaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashzillaApp.swift; sourceTree = "<group>"; };
 		A5FEFC14261F4F1600D7287B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,8 +56,10 @@
 		A5FEFC11261F4F1600D7287B /* Flashzilla */ = {
 			isa = PBXGroup;
 			children = (
+				A5C89A1D2621D728003A731A /* CardView.swift */,
 				A5FEFC12261F4F1600D7287B /* FlashzillaApp.swift */,
 				A5FEFC14261F4F1600D7287B /* ContentView.swift */,
+				A5C89A1A2621D4EF003A731A /* Card.swift */,
 				A5FEFC16261F4F1800D7287B /* Assets.xcassets */,
 				A5FEFC1B261F4F1800D7287B /* Info.plist */,
 				A5FEFC18261F4F1800D7287B /* Preview Content */,
@@ -139,6 +145,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5FEFC15261F4F1600D7287B /* ContentView.swift in Sources */,
+				A5C89A1B2621D4EF003A731A /* Card.swift in Sources */,
+				A5C89A1E2621D728003A731A /* CardView.swift in Sources */,
 				A5FEFC13261F4F1600D7287B /* FlashzillaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
