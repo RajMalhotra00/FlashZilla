@@ -14,6 +14,7 @@ struct CardView: View {
     @State private var isShowingAnswer = false
     @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
     @State private var feedback = UINotificationFeedbackGenerator()
+    @Environment(\.accessibilityEnabled) var accessibilityEnabled
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 25, style: .continuous)
@@ -32,15 +33,21 @@ struct CardView: View {
                 )
                 .shadow(radius: 10)
             
-            VStack{
-                Text(card.prompt)
-                    .font(.largeTitle)
-                    .foregroundColor(.black)
-               
-                if isShowingAnswer {
-                    Text(card.answer)
-                        .font(.title)
-                        .foregroundColor(.gray)
+            VStack {
+                if accessibilityEnabled {
+                    Text(isShowingAnswer ? card.answer : card.prompt)
+                        .font(.largeTitle)
+                        .foregroundColor(.black)
+                } else {
+                    Text(card.prompt)
+                        .font(.largeTitle)
+                        .foregroundColor(.black)
+
+                    if isShowingAnswer {
+                        Text(card.answer)
+                            .font(.title)
+                            .foregroundColor(.gray)
+                    }
                 }
             }
             .padding(20)
@@ -48,6 +55,7 @@ struct CardView: View {
         }
         .frame(width: 450, height: 250)
         .opacity(2 - Double(abs(offset.width / 50)))
+        .accessibility(addTraits: .isButton)
         .offset(x: offset.width * 5, y: 0)
         .rotationEffect(.degrees(Double(offset.width / 5)))
         .gesture(
@@ -60,7 +68,7 @@ struct CardView: View {
                     if abs(self.offset.width) > 100 {
                         if self.offset.width > 0 {
                             //shouldn't be used too much. Failure Haptic should be kept and Success Haptic removed for better user experience 
-                            self.feedback.notificationOccurred(.success)
+                           // self.feedback.notificationOccurred(.success)
                         } else {
                             self.feedback.notificationOccurred(.error)
                         }
@@ -73,6 +81,7 @@ struct CardView: View {
         .onTapGesture {
             self.isShowingAnswer.toggle()
         }
+        .animation(.spring())
     }
 }
 
